@@ -1,0 +1,24 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+// --- custom overrides ---
+
+.site-title-wrap {
+  float: left;
+
+  .site-title {
+    float: none;
+  }
+}
+
+.site-subtitle {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: $grey-color;
+  margin-bottom: 10px;
+}
