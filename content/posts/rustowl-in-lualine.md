@@ -1,16 +1,16 @@
 +++
 date = '2026-09-02T16:10:31+07:00'
 draft = false
-title = 'Rustowl in Lualine'
-description = 'Show the Rustowl status in your Neovim Lualine statusline, with colors and mouse toggling.'
+title = 'RustOwl in Lualine'
+description = 'Show the RustOwl status in your Neovim Lualine statusline, with colors and mouse toggling.'
 tags = ['rust', 'vim', 'neovim']
 +++
-If you don't know what Rustowl is, head over to the project repo [https://github.com/cordx56/rustowl](https://github.com/cordx56/rustowl).
+If you don't know what RustOwl is, head over to the project repo [https://github.com/cordx56/rustowl](https://github.com/cordx56/rustowl).
 
-We're going to show the Rustowl status in Lualine (see: [https://github.com/nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)).
-The reason we want this is that we might not be aware whether Rustowl is enabled or not, so showing it in Lualine gives extra feedback about the Rustowl status. 
+We're going to show the RustOwl status in Lualine (see: [https://github.com/nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)).
+The reason we want this is that we might not be aware whether RustOwl is enabled or not, so showing it in Lualine gives extra feedback about the RustOwl status. 
 
-Make sure you have Rustowl properly set up on your Neovim.
+Make sure you have RustOwl properly set up on your Neovim.
 
 
 The plugin setup:
@@ -32,7 +32,7 @@ return {
                         return ""
                     end
 
-                    return rustowl.is_enabled() and "Rustowl" or ""
+                    return rustowl.is_enabled() and "RustOwl" or ""
                 end,
                 cond = function()
                     return vim.bo.filetype == "rust"
@@ -51,7 +51,7 @@ return {
 
 The above is the minimum setup that I used.
 
-Try enabling/disabling Rustowl from the Neovim command line with `:Rustowl toggle` — it will show the Rustowl status in Lualine.
+Try enabling/disabling RustOwl from the Neovim command line with `:Rustowl toggle` — it will show the RustOwl status in Lualine.
 
 Alternatively, if you want to have colors and mouse interaction:
 ```lua
@@ -65,7 +65,7 @@ return {
     opts = {
     sections = {
         lualine_x = {
-            -- Rustowl status component
+            -- RustOwl status component
             {
                 function()
                     local ok, rustowl = pcall(require, "rustowl")
@@ -73,7 +73,7 @@ return {
                         return ""
                     end
 
-                    return rustowl.is_enabled() and "Rustowl on" or "Rustowl off"
+                    return rustowl.is_enabled() and "RustOwl on" or "RustOwl off"
                 end,
                 cond = function()
                     return vim.bo.filetype == "rust"
@@ -110,4 +110,4 @@ return {
 }
 ```
 
-Now you can see the Rustowl status is colorized, and you can interact with it using the mouse.
+Now you can see the RustOwl status is colorized, and you can interact with it using the mouse.
