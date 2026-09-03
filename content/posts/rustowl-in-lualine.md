@@ -1,15 +1,16 @@
----
-layout: post
-title:  "Rustowl in Lualine"
-date:   2026-09-02 09:59:00 +0700
-categories: rust neovim rustowl lualine
----
-If you don't know what is Rustowl, go head to the project repo [https://github.com/cordx56/rustowl](https://github.com/cordx56/rustowl).
++++
+date = '2026-09-02T16:10:31+07:00'
+draft = false
+title = 'Rustowl in Lualine'
+description = 'Show the Rustowl status in your Neovim Lualine statusline, with colors and mouse toggling.'
+tags = ['rust', 'vim', 'neovim']
++++
+If you don't know what Rustowl is, head over to the project repo [https://github.com/cordx56/rustowl](https://github.com/cordx56/rustowl).
 
-We gonna show Rustowl status on Lualine (see: [https://github.com/nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)).
-The reason why we want to have it is because we might not aware whether Rustowl is enabled or not, so that showing the Rustowl on Lualine will give an extra feedback to show the Rustowl status. 
+We're going to show the Rustowl status in Lualine (see: [https://github.com/nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)).
+The reason we want this is that we might not be aware whether Rustowl is enabled or not, so showing it in Lualine gives extra feedback about the Rustowl status. 
 
-Make sure you have Rustowl properly setup on your Neovim.
+Make sure you have Rustowl properly set up on your Neovim.
 
 
 The plugin setup:
@@ -48,9 +49,9 @@ return {
 }
 ```
 
-Above is minimum setup that I used.
+The above is the minimum setup that I used.
 
-Try to enable/disable the rustowl through Neovim command line `:Rustowl toggle`, it will show the the Rustowl status on Lualine.
+Try enabling/disabling Rustowl from the Neovim command line with `:Rustowl toggle` — it will show the Rustowl status in Lualine.
 
 Alternatively, if you want to have colors and mouse interaction:
 ```lua
@@ -109,4 +110,4 @@ return {
 }
 ```
 
-Here now you can see the Rustowl status is colorized. Also you can interact with mouse.
+Now you can see the Rustowl status is colorized, and you can interact with it using the mouse.

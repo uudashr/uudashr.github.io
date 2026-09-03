@@ -1,0 +1,64 @@
+baseURL = "https://uudashr.github.io/"
+locale = "en-us"
+title = "Still figuring out, at scale"
+theme = "PaperMod"
+enableRobotsTXT = true
+enableGitInfo = true
+
+[taxonomies]
+tag = "tags"
+
+[caches]
+[caches.images]
+dir = ":cacheDir/images"
+
+[params]
+description = "Software architect and engineering leader building high-scale distributed systems — sharing the craft of doing it well."
+author = "Nuruddin Ashr"
+email = "uudashr@gmail.com"
+location = "Bogor, Indonesia"
+defaultTheme = "auto"
+ShowCodeCopyButtons = true
+ShowReadingTime = true
+ShowToc = true
+ShowBreadCrumbs = true
+
+[params.homeInfoParams]
+Title = "Still figuring out, at scale."
+Content = "Notes on Go, static analysis, distributed systems, and engineering leadership — software treated like a craft."
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/uudashr"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/uudashr/"
+
+[[params.socialIcons]]
+name = "email"
+url = "mailto:uudashr@gmail.com"
+
+[[params.socialIcons]]
+name = "rss"
+url = "https://uudashr.github.io/index.xml"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 2
+
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 4
