@@ -10,7 +10,7 @@ tag = "tags"
 
 [services]
   [services.disqus]
-    shortname = "uudashr"
+    shortname = "uudashr-github"
 
 [caches]
 [caches.images]
