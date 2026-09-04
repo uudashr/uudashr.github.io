@@ -4,6 +4,7 @@ draft = false
 title = 'RustOwl in Lualine'
 description = 'Show the RustOwl status in your Neovim Lualine statusline, with colors and mouse toggling.'
 tags = ['rust', 'vim', 'neovim']
+comments = true
 +++
 If you don't know what RustOwl is, head over to the project repo [https://github.com/cordx56/rustowl](https://github.com/cordx56/rustowl).
 
