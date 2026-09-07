@@ -23,6 +23,13 @@ ShowReadingTime = true
 ShowToc = true
 ShowBreadCrumbs = true
 
+[params.schema]
+  publisherType = "Person"
+  sameAs = [
+    "https://github.com/uudashr",
+    "https://www.linkedin.com/in/uudashr/",
+  ]
+
 [params.giscus]
 repo = "uudashr/uudashr.github.io"
 repoId = "MDEwOlJlcG9zaXRvcnk0Mzg1MzgwNQ=="
