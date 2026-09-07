@@ -45,7 +45,6 @@ return {
             "fileformat",
             "filetype",
         },
-    }
     },
 }
 ```
@@ -106,7 +105,6 @@ return {
             "fileformat",
             "filetype",
         },
-    }
     },
 }
 ```
