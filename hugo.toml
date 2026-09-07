@@ -9,8 +9,11 @@ enableGitInfo = true
 tag = "tags"
 
 [services]
-  [services.disqus]
-    shortname = "uudashr-github"
+[services.disqus]
+shortname = "uudashr-github"
+
+[services.googleAnalytics]
+id = "G-KZ99KP6K92"
 
 [caches]
 [caches.images]
