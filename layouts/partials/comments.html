@@ -1,1 +1,51 @@
-{{ partial "disqus.html" . }}
+{{- $giscus := site.Params.giscus -}}
+{{- with $giscus.repo -}}
+<script src="https://giscus.app/client.js"
+        data-repo="{{ $giscus.repo }}"
+        data-repo-id="{{ $giscus.repoId }}"
+        data-category="{{ $giscus.category }}"
+        data-category-id="{{ $giscus.categoryId }}"
+        data-mapping="{{ $giscus.mapping | default "pathname" }}"
+        data-strict="{{ if $giscus.strict }}1{{ else }}0{{ end }}"
+        data-reactions-enabled="{{ if (default true $giscus.reactionsEnabled) }}1{{ else }}0{{ end }}"
+        data-emit-metadata="{{ if $giscus.emitMetadata }}1{{ else }}0{{ end }}"
+        data-input-position="{{ $giscus.inputPosition | default "bottom" }}"
+        data-theme="preferred_color_scheme"
+        data-lang="{{ $giscus.lang | default "en" }}"
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    // Match giscus to PaperMod's active theme (auto via OS, stored pref, or manual toggle).
+    // Runs before giscus client.js (async), so patching data-theme here wins on first paint;
+    // the MutationObserver then pushes later manual theme toggles into the iframe.
+    (function () {
+        var giscus = document.currentScript && document.currentScript.previousElementSibling;
+        var pageTheme = function () {
+            var el = document.documentElement;
+            var t = el && el.dataset.theme;
+            if (t === "light" || t === "dark") { return t; }
+            return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        };
+        if (giscus && giscus.tagName === "SCRIPT" && giscus.hasAttribute("data-theme")) {
+            giscus.setAttribute("data-theme", pageTheme());
+        }
+        var sendTheme = function () {
+            var frame = document.querySelector("iframe.giscus-frame");
+            if (frame) {
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme: pageTheme() } } },
+                    "https://giscus.app"
+                );
+            }
+        };
+        new MutationObserver(sendTheme).observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["data-theme"]
+        });
+    })();
+</script>
+<noscript>Please enable JavaScript to view the comments (powered by <a href="https://giscus.app" rel="noopener">giscus</a>).</noscript>
+{{- else -}}
+{{- warnf "comments: [params.giscus].repo is not set in hugo.toml; giscus comments disabled" -}}
+{{- end -}}

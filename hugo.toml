@@ -8,10 +8,6 @@ enableGitInfo = true
 [taxonomies]
 tag = "tags"
 
-[services]
-[services.disqus]
-shortname = "uudashr-github"
-
 [caches]
 [caches.images]
 dir = ":cacheDir/images"
@@ -26,6 +22,15 @@ ShowCodeCopyButtons = true
 ShowReadingTime = true
 ShowToc = true
 ShowBreadCrumbs = true
+
+[params.giscus]
+repo = "uudashr/uudashr.github.io"
+repoId = "MDEwOlJlcG9zaXRvcnk0Mzg1MzgwNQ=="
+category = "Announcements"
+categoryId = "DIC_kwDOAp0n7c4DFFQ-"
+mapping = "pathname"
+reactionsEnabled = true
+inputPosition = "bottom"
 
 [params.homeInfoParams]
 Title = "Still figuring out, at scale."
