@@ -12,9 +12,6 @@ tag = "tags"
 [services.disqus]
 shortname = "uudashr-github"
 
-[services.googleAnalytics]
-id = "G-KZ99KP6K92"
-
 [caches]
 [caches.images]
 dir = ":cacheDir/images"
